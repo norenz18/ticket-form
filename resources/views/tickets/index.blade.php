@@ -23,7 +23,7 @@
 
             <ul class="nav">
                 <li><a href="/"> HOME</a></li>
-                <li><a href="#"> ABOUT</a></li>
+                <li><a href="{{ route('register') }}"> ABOUT</a></li>
                 <li><a href="#"> SERVICES</a></li>
                 <li><a href="#"> PROJECT</a>S</li>
                 <li><a href="#"> BLOG</a></li>
@@ -36,7 +36,7 @@
         {{-- BANNER --}}
         <div class="banner">
 
-            <img src="img/ticket.jpg" alt="ticket-image" id="ticket">
+            <img src="img/progres.jpg" alt="ticket-image" id="ticket">
             <h1 class="ticket-text">Tickets</h1>
 
         </div>
@@ -53,56 +53,116 @@
 
                     <div class="form-group">
                         <label for="">Project Name</label>
-                        <input type="text" class="form-control" id="" name="projectName" placeholder="Enter project name" required>
+                        <input type="text" class="form-control @error('projectName') border border-danger @enderror"  id="" name="projectName" placeholder="Enter project name" >
+
+
+                        @error('projectName')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">Name of Client</label>
-                        <input type="text" class="form-control" id="" name="clientName" placeholder="Enter your name" required>
+                        <input type="text" class="form-control  @error('clientName') border border-danger @enderror" id="" name="clientName" placeholder="Enter your name" >
+
+                        @error('clientName')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com"  required>
+                        <input type="email" class="form-control  @error('email') border border-danger @enderror" id="exampleFormControlInput1" name="email" placeholder="name@example.com"  >
+
+                        @error('email')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">Contact number</label>
-                        <input type="number" class="form-control" id="" name="contact" placeholder="Enter your cellphone number"  required>
+                        <input type="number" class="form-control  @error('contact') border border-danger @enderror" id="" name="contact" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==11) return false;" placeholder="Enter your cellphone number"  >
+
+                        @error('contact')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">Account Manager Name</label>
-                        <input type="text" class="form-control" id="" name="managerName" placeholder="Enter account manager's name"  required>
+                        <input type="text" class="form-control  @error('managerName') border border-danger @enderror" id="" name="managerName" placeholder="Enter account manager's name"  >
+
+                        @error('managerName')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">Site link/url</label>
-                        <input type="text" class="form-control" id="" name="siteUrl" placeholder="Enter link address" required>
-                    </div>
+                        <input type="text" class="form-control  @error('siteUrl') border border-danger @enderror"id="" name="siteUrl" placeholder="Enter link address" >
 
+                        @error('siteUrl')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="col-md-6">
 
                     <div class="form-group">
                         <label for="">Escalation Subject</label>
-                        <input type="text" class="form-control" id="" name="subject" placeholder="Enter answer" required>
+                        <input type="text" class="form-control  @error('subject') border border-danger @enderror"id="" name="subject" placeholder="Enter answer" >
+
+                        @error('subject')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">Due Date of request to be finished</label>
-                        <input type="date" class="form-control" id="" name="date" required>
+                        <input type="date" class="form-control  @error('date') border border-danger  @enderror"id="" name="date" >
+
+                        @error('date')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-sm-6">
                         <label for="">File upload</label>
-                        <input type="file" class="form-control-file" id="" name="file"  required>
+                        <input type="file" class="form-control-file  @error('file') border border-danger @enderror"id="" name="file"  >
+
+                        @error('file')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">Details</label>
-                        <textarea class="form-control" id="" name="description" rows="6" placeholder="Enter details.." required></textarea>
+                        <textarea class="form-control  @error('description') border border-danger @enderror"id="" name="description" rows="6" placeholder="Enter details.." ></textarea>
+
+                        @error('description')
+                            <div class="text-danger mt-1 ">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group ">

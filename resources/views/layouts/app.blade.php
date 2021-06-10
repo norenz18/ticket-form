@@ -14,7 +14,7 @@
 
         <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-   
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -33,7 +33,7 @@
         <style>
             *{
                 font-family: 'Ubuntu', sans-serif;
-                
+
             }
             :root{
 
@@ -44,17 +44,39 @@
 
             }
             html,body {
-              
+
               background-image: url(img/hsi.jpg);
               background-repeat: no-repeat;
               background-attachment: fixed;
               background-size: cover;
               /* height: 500vh; */
-              
+
             }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            input[type=number] {
+            -moz-appearance: textfield;
+            }
+
             label{
 
                 color: var(--primary);
+                margin: 3px 0 0 0;
+            }
+            #form-btn{
+                color: var(--bg-color);
+                /* border: 1px solid var(--black); */
+                background-color: var(--primary);
+
+            }
+            #form-btn:hover{
+
+                background-color: var(--black);
             }
             #btn-sub{
 
@@ -121,7 +143,7 @@
                 flex-direction: row;
                 justify-content: space-evenly;
                 align-items: center;
-                
+
                 padding: 30px 0 30px 0;
                 cursor: pointer;
                 background-color: var(--bg-color);
@@ -148,7 +170,7 @@
                 list-style-type: none;
                 margin-right: 20px;
                 transition: all .2s ease-in-out;
-               
+
             }
             .nav-header .nav li a{
 
@@ -181,7 +203,7 @@
                 background-color: var(--black);
                 border: none;
                 color: var(--bg-color);
-       
+
             }
             /* BANNER */
             .banner{
@@ -196,8 +218,8 @@
                 height: 280px;
                 width: 100%;
                 object-fit: cover;
-                filter: grayscale(80%);
-               
+                filter: grayscale(20%);
+
 
             }
             .banner .ticket-text{
@@ -230,7 +252,16 @@
                 letter-spacing: 5px;
                 margin: 80px 0;
             }
-            
+
+            /* Register login form */
+
+            #hsi-img{
+
+                width: auto;
+                height: 150px;
+
+            }
+
 
         </style>
     </head>
